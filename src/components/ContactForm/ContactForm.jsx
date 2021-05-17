@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import styles from './ContactForm.module.css';
+import { addContact } from '../../redux/contacts/contacts-actions';
 
 class ContactForm extends Component {
   static propTypes = {
@@ -26,7 +28,9 @@ class ContactForm extends Component {
       number: this.state.number,
     };
 
-    this.props.handleSubmit(newContact);
+    console.log('newContact :>> ', newContact);
+
+    this.props.addContact(newContact);
     this.setState({ name: '' });
     this.setState({ number: '' });
   };
@@ -62,7 +66,10 @@ class ContactForm extends Component {
             />
           </label>
           <button type="submit" className={styles.button}>
-            Add contact ✅
+            Add contact{' '}
+            <span role="img" aria-label="green check" className={styles.icon}>
+              ✅
+            </span>
           </button>
         </form>
       </div>
@@ -70,4 +77,10 @@ class ContactForm extends Component {
   }
 }
 
-export default ContactForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    addContact: newContact => dispatch(addContact(newContact)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ContactForm);

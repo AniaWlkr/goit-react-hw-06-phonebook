@@ -1,0 +1,17 @@
+.label {
+  margin-top: 5px;
+
+  font-size: 26px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.input {
+  margin-top: 5px;
+  padding: 2px 10px;
+
+  font-size: 20px;
+  color: darkgrey;
+}
