@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ContactFilter.module.css';
 import { connect } from 'react-redux';
-import { changeFilter } from '../../redux/contacts/contacts-actions';
+import actions from '../../redux/contacts/contacts-actions';
 
 const ContactFilter = ({ value, handleChange }) => {
   return (
@@ -31,7 +31,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleChange: event => dispatch(changeFilter(event.target.value)),
+    handleChange: event => dispatch(actions.changeFilter(event.target.value)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ContactFilter);

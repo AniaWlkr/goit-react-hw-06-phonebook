@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import styles from './ContactForm.module.css';
-import { addContact } from '../../redux/contacts/contacts-actions';
+import actions from '../../redux/contacts/contacts-actions';
 
 class ContactForm extends Component {
   static propTypes = {
@@ -27,8 +27,6 @@ class ContactForm extends Component {
       name: this.state.name,
       number: this.state.number,
     };
-
-    console.log('newContact :>> ', newContact);
 
     this.props.addContact(newContact);
     this.setState({ name: '' });
@@ -79,7 +77,7 @@ class ContactForm extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addContact: newContact => dispatch(addContact(newContact)),
+    addContact: newContact => dispatch(actions.addContact(newContact)),
   };
 };
 

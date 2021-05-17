@@ -4,11 +4,6 @@ import ContactForm from '../ContactForm';
 import ContactList from '../ContactList';
 
 class App extends Component {
-  // state = {
-  //   contacts: [],
-  //   filter: '',
-  // };
-
   componentDidMount() {
     // const contacts = JSON.parse(localStorage.getItem('contacts'));
     // if (contacts) this.setState({ contacts });
@@ -19,25 +14,6 @@ class App extends Component {
     //   localStorage.setItem('contacts', JSON.stringify(contacts));
     // }
   }
-
-  handleChange = event => {
-    // this.setState({ [event.currentTarget.name]: event.currentTarget.value });
-  };
-
-  // addContact = newContact => {
-  //   if (contacts.find(contact => contact.name === newContact.name)) {
-  //     alert(`${newContact.name} is already in contact`);
-  //     return null;
-  //   }
-
-  //   this.setState(({ contacts }) => ({ contacts: [newContact, ...contacts] }));
-  // };
-
-  // deleteContact = contactId => {
-  //   this.setState(prevState => ({
-  //     contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-  //   }));
-  // };
 
   render() {
     return (
